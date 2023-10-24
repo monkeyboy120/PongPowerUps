@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,5 +41,19 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         FindObjectOfType<BallScript>().Reset();
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (player1score == 11)
+            SceneManager.LoadScene("Victory1");
+
+        if (player2score == 11)
+            SceneManager.LoadScene("Victory2");
     }
 }

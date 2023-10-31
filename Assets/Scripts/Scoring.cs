@@ -11,11 +11,11 @@ public class Scoring : MonoBehaviour
     {
         if (isPlayer1)
         {
-            FindObjectOfType<GameManager>().Player1Scored();
+            FindObjectOfType<GameManager>().Player2Scored();
         }
         else
         {
-            FindObjectOfType<GameManager>().Player2Scored();
+            FindObjectOfType<GameManager>().Player1Scored();
         }
     }
 }

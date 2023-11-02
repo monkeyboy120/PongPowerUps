@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,13 @@ public class PaddleScript : MonoBehaviour
 
     private Vector3 initialScale;
     private float initialSpeed;
+
+    private void Start()
+    {
+        initialScale = transform.localScale;
+        initialSpeed = speed;
+    }
+
     void Update()
     {
         if (isPlayer1)
@@ -27,16 +35,24 @@ public class PaddleScript : MonoBehaviour
     public void ChangeSize(float scaleFactor)
     {
         transform.localScale = initialScale * scaleFactor;
+        StartCoroutine(ResetAfterDelay());
     }
 
     public void ChangeSpeed(float speedMultiplier)
     {
         speed = initialSpeed * speedMultiplier;
+        StartCoroutine(ResetAfterDelay());
     }
 
     public void Reset()
     {
         transform.localScale = initialScale;
         speed = initialSpeed;
+    }
+
+    IEnumerator ResetAfterDelay()
+    {
+        yield return new WaitForSeconds(7f);
+        Reset();
     }
 }

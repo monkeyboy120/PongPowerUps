@@ -301,8 +301,8 @@ MonoBehaviour:
   - {fileID: 8396399421547868979, guid: 1bd58c16354b649cb95894cacfe671f1, type: 3}
   - {fileID: 5355606668253036915, guid: 1db613daa746d4d66b57caa4efd901f8, type: 3}
   - {fileID: 9162429835117012959, guid: 6cd1b93ec3ded413587af3ae49e1eb4f, type: 3}
-  minSpawnInterval: 1
-  maxSpawnInterval: 5
+  minSpawnInterval: 7
+  maxSpawnInterval: 10
   minY: -3
   maxY: 3
   leftPaddle: {fileID: 1339954684}

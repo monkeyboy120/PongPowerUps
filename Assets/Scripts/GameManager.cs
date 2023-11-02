@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         player1score++;
         player1scoretext.text = player1score.ToString();
+        PlayScoreAnimation(player1);
         Reset();
     }
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         player2score++;
         player2scoretext.text = player2score.ToString();
+        PlayScoreAnimation(player2);
         Reset();
     }
 
@@ -55,5 +57,11 @@ public class GameManager : MonoBehaviour
 
         if (player2score == 11)
             SceneManager.LoadScene("Victory2");
+    }
+
+    private void PlayScoreAnimation(GameObject scoringPaddle)
+    {
+        Animator paddleAnimator = scoringPaddle.GetComponent<Animator>();
+        paddleAnimator.SetTrigger("SpinAnimationTrigger");
     }
 }

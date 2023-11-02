@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BallScript : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
     private Vector2 startPosition;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -26,5 +29,10 @@ public class BallScript : MonoBehaviour
         rb.velocity = Vector2.zero;
         transform.position = startPosition;
         Invoke("Launch", 2f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        audioSource.Play();
     }
 }

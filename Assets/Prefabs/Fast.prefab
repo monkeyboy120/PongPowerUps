@@ -101,6 +101,7 @@ MonoBehaviour:
   powerupType: 2
   sizeMultiplier: 1
   speedMultiplier: 2
+  audioSource: {fileID: 0}
 --- !u!61 &-1495888695801188895
 BoxCollider2D:
   m_ObjectHideFlags: 0

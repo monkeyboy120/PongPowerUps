@@ -34,7 +34,8 @@ public class PaddleScript : MonoBehaviour
 
     public void ChangeSize(float scaleFactor)
     {
-        Vector3 newScale = new Vector3(transform.localScale.x, initialScale.y);
+        Vector3 newScale = initialScale;
+        newScale.y *= scaleFactor;
         transform.localScale = newScale;
         StartCoroutine(ResetAfterDelay());
     }

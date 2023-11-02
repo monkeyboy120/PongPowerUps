@@ -8,18 +8,18 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Ball")] public GameObject ball;
+    public ParticleSystem explosionParticle;
 
-    [Header("Player1")]
-    public GameObject player1;
+    [Header("Player1")] public GameObject player1;
     public GameObject leftWall;
 
-    [Header("Player2")]
-    public GameObject player2;
+    [Header("Player2")] public GameObject player2;
     public GameObject rightWall;
 
-    [Header("Score")]
-    public TextMeshProUGUI player1scoretext;
+    [Header("Score")] public TextMeshProUGUI player1scoretext;
     public TextMeshProUGUI player2scoretext;
+
+    [Header("Music")] public AudioSource scoreSound;
 
     private int player1score = 0;
     private int player2score = 0;
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         player1score++;
         player1scoretext.text = player1score.ToString();
         PlayScoreAnimation(player1);
+        scoreSound.Play();
         Reset();
     }
 
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         player2score++;
         player2scoretext.text = player2score.ToString();
         PlayScoreAnimation(player2);
+        scoreSound.Play();
         Reset();
     }
 
